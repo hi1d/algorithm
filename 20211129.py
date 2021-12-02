@@ -16,15 +16,9 @@ def solution(numbers):
     count = len(numbers)
     for i in numbers:
         for j in numbers[:-count]:
-            print(f"i={i} / j={j} / count ={count}")
             answer.append(i+j)
 
         count -= 1
-
-    print(answer)
-    print(list(set(answer)))
-    for a in answer:
-        print(answer[a])
 
     return sorted(list(set(answer)))
 
