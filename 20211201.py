@@ -21,9 +21,8 @@
 # def solution(numbers):
 #     return 45-sum(numbers)
 
+# def solution(x): return sum(range(10))-sum(x)
 
-# print(solution(numbers))
-# print(solution(numbers2))
 
 # ==================================================================================
 
@@ -57,25 +56,36 @@
 # 4	    [4,4,4,4,4]	                [4,1,2,3]
 
 N = 5
-stages = [2,1,2,6,2,4,3,3]
+stages = [2, 1, 2, 6, 2, 4, 3, 3]
 # N = 4
 # stages = [4,4,4,4,4]
 
+
 def solution(N, stages):
-    failed_rate = {i+1:0 for i in range(N) } # 0으로 초기화
+    failed_rate = {i+1: 0 for i in range(N)}  # 0으로 초기화
     total_user = len(stages)
 
     for i in range(1, N+1):
-        if total_user != 0: # devision by zero 오류 방지 (0으로 나눌수 없다.)
+        if total_user != 0:  # devision by zero 오류 방지 (0으로 나눌수 없다.)
             stage_user = stages.count(i)
             failed_rate[i] = stage_user / total_user
             total_user -= stage_user
+        else:                # Keyerror 방지
+            failed_rate[i] = 0
 
-    failed = sorted(failed_rate.items(),key=lambda x:x[1],reverse=True)
-    failed_rate = [i[0] for i in failed]
-    return failed_rate
+    return sorted(failed_rate, key=lambda x: failed_rate[x], reverse=True)
+
+    # failed = sorted(failed_rate.items(), key=lambda x: x[1], reverse=True)
+    # failed_rate = [i[0] for i in failed]
+    # return failed_rate
+
+
+print(solution(N, stages))
 
 # =================== 두번째 시도 (성공) =============================
+# N = 100
+# stages = [2, 1, 2, 6, 2, 4, 3, 3]
+
 
 # def solution(N, stages):
 #     failed_rate = {}
@@ -87,12 +97,13 @@ def solution(N, stages):
 #             failed_rate[i] = stage_user / total_user
 #             total_user -= stage_user
 #         else:
-#             failed_rate[i] = 0    
-#     failed = sorted(failed_rate.items(),key=lambda x:x[1],reverse=True)
+#             failed_rate[i] = 0
+#     failed = sorted(failed_rate.items(), key=lambda x: x[1], reverse=True)
 #     failed_rate = [i[0] for i in failed]
 #     return failed_rate
 
-# print(solution(N,stages))
+
+# print(solution(N, stages))
 
 # =================== 첫 시도 =============================
 # def solution(N, stages):
@@ -101,12 +112,12 @@ def solution(N, stages):
 #     success_person = 0
 #     failed_person = 0
 #     #실패율 구하는 반복문
-#     for i in range(1,N+1): # 해당 스테이지  
+#     for i in range(1,N+1): # 해당 스테이지
 #         for j in stages: # 해당 스테이지의 유저
 #             if i < j:
 #                 success_person += 1 # 스테이지 성공한 사람
 #             elif i == j:
-#                 failed_person += 1 # 스테이지 실패한 사람 
+#                 failed_person += 1 # 스테이지 실패한 사람
 
 #         failed_rate = failed_person / (success_person + failed_person)
 #         #실패율 = 스테이지에 도달 했으나 실패한 플레이어 수 / 해당 스테이지에 도달 한 플레이어 수
@@ -116,15 +127,12 @@ def solution(N, stages):
 
 #     #실패율에 따른 정렬
 #     failed = sorted(failed.items(),key = lambda item: item[1],reverse=True)
-#     # failed 딕셔너리의 item 들을 
+#     # failed 딕셔너리의 item 들을
 #     # key = lambda item: item[1] // item[1] == value값으로 정렬한다.
-#     # lambda 표현식의 의미는 
+#     # lambda 표현식의 의미는
 #     # item이라는 매개변수를 가져와서 item의 1번째 인덱스 key[0]:value[1] 인 value값을 반환한다.
 #     # sorted의 key에는 호출될 수 있는 함수가 들어간다. 함수 외 입력시 not callable 에러 발생.
 #     for x in failed:
 #         answer.append(x[0])
-    
+
 #     return answer
-
-
-
