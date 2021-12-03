@@ -39,8 +39,8 @@
 
 import re
 
-new_id = "...!@BaT#*..y.abcdefghijklm"
-# new_id = "z-+.^."
+# new_id = "...!@BaT#*..y.abcdefghijklm"
+new_id = "z-+.^."
 # new_id = "=.="
 
 
@@ -58,7 +58,7 @@ def solution(new_id):
     new_id = re.sub('[..]+', '.', new_id)
     print(f'3단계 : {new_id}')
     # 4단계
-    new_id = re.sub('^[.] | [.]$', '', new_id)
+    new_id = re.sub('^[.]|[.]$', '', new_id)
     print(f'4단계 : {new_id}')
     # 5단계
     if new_id == '':
@@ -70,9 +70,9 @@ def solution(new_id):
     new_id = re.sub('^[.]|[.]$', '', new_id)
     print(f'6단계 : {new_id}')
     # 7단계
-    if len(new_id) < 3:
-        while len(new_id) < 3:
-            new_id += new_id[-1]
+    while len(new_id) < 3:
+        new_id += new_id[-1]
+    print(f'7단계 : {new_id}')
 
     return new_id
 
@@ -89,7 +89,7 @@ def solution(new_id):
 #     new_id = re.sub('[^a-zA-Z0-9-_.]', '', new_id)
 #     print(f'2단계 : {new_id}')
 #     # 3단계
-#     new_id = re.sub('\.+', '.', new_id)
+#     new_id = re.sub('[..]+', '.', new_id)
 #     print(f'3단계 : {new_id}')
 #     # 4단계
 #     if new_id == '':
@@ -121,14 +121,21 @@ def solution(new_id):
 #     return new_id
 
 
-# print(solution(new_id))
+print(solution(new_id))
 
-# import re
+
+# 핸드폰 번호 가리기
+# 프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
+# 전화번호가 문자열 phone_number로 주어졌을 때,
+# 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.
+
 # phone_number = "01033334444"
 
 
 # def solution(phone_number):
 #     return re.sub('[0-9]', '*', phone_number, len(phone_number)-4)
 
-
 # print(solution(phone_number))
+
+#     # re.sub(pattern, repl, string, count=0, flags=0)
+#     # re.sub('패턴', '바꿀문자열', '문자열', 바꿀횟수)
