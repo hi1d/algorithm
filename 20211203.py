@@ -34,21 +34,20 @@
 # "2three45sixseven"	234567
 # "123"	            123
 
-s = "one4seveneight"
-# s = "23four5six7"
+
+# def solution(s):
+#     table = {'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4',
+#             'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9'}
+
+#     for i in table:
+#         s = s.replace(i, table[i])
+#     return int(s)
 
 
-def solution(s):
-    table = {'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4',
-             'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9'}
-
-    for i in table:
-        s = s.replace(i, table[i])
-    return int(s)
-
-
-print(solution(s))
-
+# print(solution("one4seveneight"))
+# print(solution("23four5six7"))
+# print(solution("2three45sixseven"))
+# print(solution("123"))
 # 시저 암호
 # 문제 설명
 # 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는
@@ -98,4 +97,6 @@ print(solution(s))
 #     return answer
 
 
-# print(solution(s, n))
+# print(solution("AB", 1))
+# print(solution("z", 1))
+# print(solution("a B z", 4))

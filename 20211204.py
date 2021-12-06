@@ -51,7 +51,6 @@ def solution(priorities, location):
     for i in range(len(priorities)):
         answer += chr(ord('A')+i)
     target = chr(ord('A')+location)
-    count = len(priorities)
     i = 0
     while True:
         if priorities[i] < max(priorities[i+1:]):
