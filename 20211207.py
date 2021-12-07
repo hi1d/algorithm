@@ -43,9 +43,20 @@
 # 11	false
 # 13	false
 
-# arr = 10
+arr = 10
 
 
+def solution(arr):
+    sum_num = 0
+    for i in str(arr):
+        sum_num += int(i)
+
+    if arr % sum_num == 0:
+        return True
+    return False
+
+
+# == == == == == == == == == == 코드 간략화 == == == == == == == == == == == == ==
 # def solution(arr):
 #     answer = True
 #     num = str(arr)
@@ -61,4 +72,4 @@
 #     return answer
 
 
-# print(solution(arr))
+print(solution(arr))
