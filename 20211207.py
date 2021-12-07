@@ -12,7 +12,7 @@
 
 
 # def solution(N):
-#     if N < 2:
+#     if N < 3:
 #         return N
 #     else:
 #         return solution(N-1) + solution(N-2)
@@ -20,12 +20,13 @@
 
 # fib = []
 # n = []
-# for i in range(1, N):
+# for i in range(0, N+1):
+#     print(i)
 #     fib.append(solution(i))
 #     n.append(i)
 
-# print("N= ", n)
-# print("sol= ", fib)
+# print(fib[-1])
+
 
 # 하샤드 수
 # 문제 설명
@@ -42,22 +43,22 @@
 # 11	false
 # 13	false
 
-arr = 36
+# arr = 10
 
 
-def solution(arr):
-    answer = True
-    num = str(arr)
-    num_list = []
-    for i in range(len(num)):
-        num_list.append(int(num[i]))
-    sum_num = sum(num_list)
+# def solution(arr):
+#     answer = True
+#     num = str(arr)
+#     num_list = []
+#     for i in range(len(num)):
+#         num_list.append(int(num[i]))
+#     sum_num = sum(num_list)
 
-    if arr % sum_num == 0:
-        answer = True
-    else:
-        answer = False
-    return answer
+#     if arr % sum_num == 0:
+#         answer = True
+#     else:
+#         answer = False
+#     return answer
 
 
-print(solution(arr))
+# print(solution(arr))
