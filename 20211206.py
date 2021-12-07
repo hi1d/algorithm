@@ -25,6 +25,7 @@
 #             for k in range(j+1, len(nums)):
 #                 three_nums_add = nums[i]+nums[j]+nums[k]
 #                 three_nums.append(three_nums_add)
+
 #     for i in three_nums:  # 소수 판별하기
 #         for j in range(2, i):
 #             if i % j == 0:
@@ -33,7 +34,7 @@
 #             flag = 1
 #         if flag == 1:
 #             answer.append(i)
-#     return len(answer)
+#     return answer
 
 
 # print(solution(nums))
