@@ -5,20 +5,16 @@
 # N = 5, n = 12345  ->  answer = 98765
 # N = 8, n = 12345678  ->  answer = 98765432
 
-# N = 9
+N = 9
 
 
-# def solution(N):
-#     answer = ""
-#     while True:
-#         if N == 0:
-#             break
-#         answer += str(N)
-#         N -= 1
-#     return int(answer)
+def solution(N):
+    num = list(i for i in range(1, 10))
+    reverse_num = num[:-N-1:-1]
+    return reverse_num
 
 
-# print(solution(N))
+print(solution(N))
 
 # 이상한 문자 만들기
 # 문제 설명
@@ -36,19 +32,20 @@
 s = "try hello world"
 
 
-def solution(s):
-    split_list = s.split(' ')
-    result = []
-    for i in split_list:
-        answer = ''
+# def solution(s):
+#     split_list = s.split(' ')
+#     result = []
+#     for i in split_list:
+#         print("i = ", i)
+#         answer = ''
+#         for j in range(len(i)):
+#             print("j= ", j)
+#             if j % 2 == 0:
+#                 answer += i[j].upper()
+#             else:
+#                 answer += i[j].lower()
+#         result.append(answer)
+#     return ' '.join(result)
 
-        for j in range(len(i)):
-            if j % 2 == 0:
-                answer += i[j].upper()
-            else:
-                answer += i[j].lower()
-        result.append(answer)
-    return ' '.join(result)
 
-
-print(solution(s))
+# print(solution(s))
