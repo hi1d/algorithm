@@ -32,18 +32,25 @@ budget = 27
 
 def solution(d, budget):
     d.sort()
-    for i in range(len(d)):
-        budget -= d[i]
-        print("bud= ", budget, "d= ", d[i], "i= ", i)
-        if budget < 0:
-            return i
-        elif budget == 0:
-            return i+1
-        elif len(d) == 1:
-            return i+1
-        if d[i] == d[-1]:
-            return i+1
-    return
+    while budget < sum(d):
+        d.pop()
+    return len(d)
+
+# == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == =
+
+# def solution(d, budget):
+#     d.sort()
+#     for i in range(len(d)):
+#         budget -= d[i]
+#         if budget < 0:
+#             return i
+#         elif budget == 0:
+#             return i+1
+#         elif len(d) == 1:
+#             return i+1
+#         elif sum(d) < budget:
+#             return len(d)
+#     return
 
 # == == == == == == == == == == == == == == == == == == == == == == == == == == == == =
 
@@ -51,7 +58,7 @@ def solution(d, budget):
 # def solution(d, budget):
 #     d.sort()
 #     count = 0
-#     sum = 0
+#     sum = []
 #     for i in d:
 #         sum += i
 #         if sum > budget:
