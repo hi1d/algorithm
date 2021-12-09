@@ -5,7 +5,7 @@
 # N = 5, n = 12345  ->  answer = 98765
 # N = 8, n = 12345678  ->  answer = 98765432
 
-N = 9
+N = 5
 
 
 def solution(N):
@@ -13,8 +13,16 @@ def solution(N):
     reverse_num = num[:-N-1:-1]
     return reverse_num
 
+# def solution(N):
+#     str_num = ''
+#     for i in range(1, N+1):
+#         str_num += str(i)
+#     result = int(str_num) * 8 + N
+#     return result
+
 
 print(solution(N))
+
 
 # 이상한 문자 만들기
 # 문제 설명
