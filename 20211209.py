@@ -20,21 +20,40 @@
 # [1,3,2,5,4]	9	    3
 # [2,2,3,3]	    10	    4
 
-# d = [1, 3, 2, 5, 4]
-# budget = 9
+from itertools import combinations as comb
+d = [1, 3, 2, 5, 4]
+budget = 9
 # d = [2, 2, 3, 3]
 # budget = 10
 # d = [1, 1, 1]
 # budget = 2
-d = [1, 3, 5, 7]
-budget = 27
+# d = [1, 3, 5, 7]
+# budget = 27
+# d = [1]
+# budget = 2
+
+d = [31]
+budget = 30
 
 
 def solution(d, budget):
+    nums = []
     d.sort()
-    while budget < sum(d):
-        d.pop()
-    return len(d)
+    if sum(d) <= budget:
+        nums.append(len(d))
+    else:
+        for i in range(len(d)):
+            if sum(d[:len(d)-i]) <= budget:
+                nums.append(len(d[:len(d)-i]))
+                break
+
+    return nums[0]
+
+# def solution(d, budget):
+#     d.sort()
+#     while budget < sum(d):
+#         d.pop()
+#     return len(d)
 
 # == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == == =
 
@@ -54,13 +73,16 @@ def solution(d, budget):
 
 # == == == == == == == == == == == == == == == == == == == == == == == == == == == == =
 
+# d = [1, 3, 2, 5, 4]
+# budget = 9
+
 
 # def solution(d, budget):
 #     d.sort()
 #     count = 0
-#     sum = []
+#     sum = 0
 #     for i in d:
-#         sum += i
+#         sum += int(i)
 #         if sum > budget:
 #             break
 #         elif sum == budget:
@@ -68,6 +90,7 @@ def solution(d, budget):
 #             break
 #         count += 1
 
-#     return count
+    # return count
+
 
 print(solution(d, budget))
