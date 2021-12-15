@@ -6,17 +6,7 @@
 # input = 20
 
 
-# def solution(input):
-#     prime_list = []
-#     for i in range(2, input+1):
-#         print(prime_list)
-#         for j in prime_list:
-#             if i % j == 0 and j*j <= i:
-#                 break
-#         else:
-#             prime_list.append(i)
-#     return prime_list
-
+# def solution(input):ㅁ
 
 # print(solution(input))
 
@@ -295,21 +285,21 @@ string = 'lololol'
 #             cur = cur.next
 #         cur.next = Node(value)
 
-#     def get_kth_node_from_last(self, k):
-#         count = 1
-#         cur = self.head
+# def get_kth_node_from_last(self, k):
+#     count = 1
+#     cur = self.head
 
-#         while cur.next is not None:
-#             cur = cur.next
-#             count += 1
+#     while cur.next is not None:
+#         cur = cur.next
+#         count += 1
 
-#         target_cur = count - k
-#         cur = self.head
+#     target_cur = count - k
+#     cur = self.head
 
-#         for i in range(target_cur):
-#             cur = cur.next
+#     for i in range(target_cur):
+#         cur = cur.next
 
-#         return cur
+#     return cur
 
 
 # linked_list = LinkedList(6)
@@ -360,19 +350,19 @@ target_number = 0
 result_count = 0
 
 
-def solution(array, target, current_index, current_sum):
-    if current_index == len(array):
-        if current_sum == target:
-            global result_count
-            result_count += 1
-        return
+# def solution(array, target, current_index, current_sum):
+#     if current_index == len(array):
+#         if current_sum == target:
+#             global result_count
+#             result_count += 1
+#         return
 
-    solution(array, target, current_index + 1,
-             current_sum + array[current_index])
+#     solution(array, target, current_index + 1,
+#              current_sum + array[current_index])
 
-    solution(array, target, current_index + 1,
-             current_sum - array[current_index])
+#     solution(array, target, current_index + 1,
+#              current_sum - array[current_index])
 
 
-solution(numbers, target_number, 0, 0)
-print(result_count)
+# solution(numbers, target_number, 0, 0)
+# print(result_count)
