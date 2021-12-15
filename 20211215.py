@@ -47,3 +47,18 @@ def insertion_sort(array):
 
 insertion_sort(input)
 print(input)
+
+
+n = 12345
+
+
+def test(n):
+    answer = []
+    n = str(n)[::-1]
+    for i in range(len(n)):
+        answer.append(n[i])
+
+    return answer
+
+
+print(test(n))
