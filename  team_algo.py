@@ -36,7 +36,7 @@
 # s는 길이 1 이상, 길이 8 이하인 문자열입니다.
 
 import re
-s = "1234"
+s = "123b4a"
 
 
 def solution(s):
