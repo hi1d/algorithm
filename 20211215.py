@@ -52,13 +52,8 @@ print(input)
 n = 12345
 
 
-def test(n):
-    answer = []
-    n = str(n)[::-1]
-    for i in range(len(n)):
-        answer.append(n[i])
-
-    return answer
+def solution(n):
+    return [int(i) for i in str(n)[::-1]]
 
 
-print(test(n))
+print(solution(n))
