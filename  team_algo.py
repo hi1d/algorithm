@@ -128,6 +128,11 @@ import re
 # n	result
 # 10	3
 # 12	11
+n = 15
+
 
 def solution(n):
     return min([i for i in range(1, n) if n % i == 1])
+
+
+print(solution(n))
