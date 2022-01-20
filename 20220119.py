@@ -236,7 +236,6 @@ def solution(s):
     for i in s:
         if i != ',' and i != '':
             i = i.split(',')
-            print(i)
             for j in i:
                 if int(j) not in result:
                     result.append(int(j))
