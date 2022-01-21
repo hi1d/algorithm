@@ -235,8 +235,10 @@ def solution(s):
     result = []
     for i in s:
         if i != ',' and i != '':
+            print(f'i = {i}')
             i = i.split(',')
             for j in i:
+                print(f'j={j}, resut={result}')
                 if int(j) not in result:
                     result.append(int(j))
     return result

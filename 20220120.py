@@ -56,8 +56,6 @@
 # ["muzi", "frodo", "apeach", "neo"]	["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]	2	[2,1,1,0]
 # ["con", "ryan"]	["ryan con", "ryan con", "ryan con", "ryan con"]	3	[0,0]
 
-from itsdangerous import exc
-
 
 id_list = ["muzi", "frodo", "apeach", "neo"]
 report = ["muzi frodo", "apeach frodo", "frodo neo",
@@ -68,20 +66,20 @@ k = 2
 # report = ["ryan con", "ryan con", "ryan con", "ryan con"]
 
 
-def solution(id_list, report, k):
-    result = [0] * len(id_list)
-    report = list(set(report))
-    answer = {id: [] for id in id_list}
+# def solution(id_list, report, k):
+#     result = [0] * len(id_list)
+#     report = list(set(report))
+#     answer = {id: [] for id in id_list}
 
-    for i in report:
-        i = i.split()
-        answer[i[1]].append(i[0])
+#     for i in report:
+#         i = i.split()
+#         answer[i[1]].append(i[0])
 
-    for key, value in answer.items():
-        if len(value) >= k:
-            for j in value:
-                result[id_list.index(j)] += 1
-    return result
+#     for key, value in answer.items():
+#         if len(value) >= k:
+#             for j in value:
+#                 result[id_list.index(j)] += 1
+#     return result
 
 # == == == == == == == == == == == == 초본 == == == == == == == == == == == == == == == == =
 # def solution(id_list, report, k):
@@ -115,4 +113,4 @@ def solution(id_list, report, k):
 #     return result_count
 
 
-print(solution(id_list, report, k))
+# print(solution(id_list, report, k))
