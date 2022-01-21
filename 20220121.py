@@ -66,21 +66,72 @@ progresses = [93, 30, 55, 60, 40, 65]
 speeds = [1, 30, 5, 10, 60, 7]
 
 
-def solution(progresses, speeds):
-    result = []
-    while len(progresses) != 0:
-        if progresses[0] >= 100:
-            result[-1] += 1
-            progresses.pop(0)
-            speeds.pop(0)
-            continue
-        progresses = list(map(lambda x, y: x+y, progresses, speeds))
-        if progresses[0] >= 100:
-            result.append(1)
-            progresses.pop(0)
-            speeds.pop(0)
+# def solution(progresses, speeds):
+#     result = []
+#     while len(progresses) != 0:
+#         if progresses[0] >= 100:
+#             result[-1] += 1
+#             progresses.pop(0)
+#             speeds.pop(0)
+#             continue
+#         progresses = list(map(lambda x, y: x+y, progresses, speeds))
+#         if progresses[0] >= 100:
+#             result.append(1)
+#             progresses.pop(0)
+#             speeds.pop(0)
 
-    return result
+#     return result
 
 
-print(solution(progresses, speeds))
+# print(solution(progresses, speeds))
+
+# == == == == == == == == == == == == == == == == == == == == == == == == =
+
+
+# 모의고사
+# 문제 설명
+# 수포자는 수학을 포기한 사람의 준말입니다.
+# 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다.
+# 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.
+
+# 1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, ...
+# 2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, ...
+# 3번 수포자가 찍는 방식: 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, ...
+
+# 1번 문제부터 마지막 문제까지의 정답이 순서대로 들은 배열 answers가 주어졌을 때,
+# 가장 많은 문제를 맞힌 사람이 누구인지 배열에 담아 return 하도록 solution 함수를 작성해주세요.
+
+# 제한 조건
+# 시험은 최대 10,000 문제로 구성되어있습니다.
+# 문제의 정답은 1, 2, 3, 4, 5중 하나입니다.
+# 가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
+# 입출력 예
+# answers	    return
+# [1,2,3,4,5]	[1]
+# [1,3,2,4,2]	[1,2,3]
+
+# answers = [1, 2, 3, 4, 5]
+# answers = [3, 3, 2, 1, 5]
+# -> [3]
+answers = [5, 5, 4, 2, 3]
+#  -> [1,2,3]
+
+
+def solution(answers):
+    s1 = [1, 2, 3, 4, 5]
+    s2 = [2, 1, 2, 3, 2, 4, 2, 5]
+    s3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    student = {1: 0, 2: 0, 3: 0}
+
+    for i in range(len(answers)):
+        if answers[i] == s1[i % len(s1)]:
+            student[1] += 1
+        if answers[i] == s2[i % len(s2)]:
+            student[2] += 1
+        if answers[i] == s3[i % len(s3)]:
+            student[3] += 1
+    max_score = max(student.values())
+    return [i for i, j in student.items() if j == max_score]
+
+
+print(solution(answers))
