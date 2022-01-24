@@ -18,7 +18,7 @@
 # [3, 0, 6, 1, 5]	3
 
 # citations = [3, 0, 6, 1, 5]
-# citations = [41, 24]
+citations = [41, 24]
 # citations = [0, 0, 0, 0, 0]
 # citations = [9, 9, 9, 12]
 # citations = [1, 1, 5, 7, 6]
@@ -31,7 +31,6 @@
 #             return j
 #         elif i > j:
 #             return i
-
 #     return len(citations)
 
 
@@ -62,8 +61,8 @@
 # [95, 90, 99, 99, 80, 99]	[1, 1, 1, 1, 1, 1]	[1, 3, 2]
 
 
-progresses = [93, 30, 55, 60, 40, 65]
-speeds = [1, 30, 5, 10, 60, 7]
+# progresses = [93, 30, 55, 60, 40, 65]
+# speeds = [1, 30, 5, 10, 60, 7]
 
 
 # def solution(progresses, speeds):
@@ -117,21 +116,21 @@ answers = [5, 5, 4, 2, 3]
 #  -> [1,2,3]
 
 
-def solution(answers):
-    s1 = [1, 2, 3, 4, 5]
-    s2 = [2, 1, 2, 3, 2, 4, 2, 5]
-    s3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
-    student = {1: 0, 2: 0, 3: 0}
+# def solution(answers):
+#     s1 = [1, 2, 3, 4, 5]
+#     s2 = [2, 1, 2, 3, 2, 4, 2, 5]
+#     s3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+#     student = {1: 0, 2: 0, 3: 0}
 
-    for i in range(len(answers)):
-        if answers[i] == s1[i % len(s1)]:
-            student[1] += 1
-        if answers[i] == s2[i % len(s2)]:
-            student[2] += 1
-        if answers[i] == s3[i % len(s3)]:
-            student[3] += 1
-    max_score = max(student.values())
-    return [i for i, j in student.items() if j == max_score]
+#     for i in range(len(answers)):
+#         if answers[i] == s1[i % len(s1)]:
+#             student[1] += 1
+#         if answers[i] == s2[i % len(s2)]:
+#             student[2] += 1
+#         if answers[i] == s3[i % len(s3)]:
+#             student[3] += 1
+#     max_score = max(student.values())
+#     return [i for i, j in student.items() if j == max_score]
 
 
-print(solution(answers))
+# print(solution(answers))
