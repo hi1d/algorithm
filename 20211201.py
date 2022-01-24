@@ -14,15 +14,18 @@
 # [1,2,3,4,6,7,8,0]	14
 # [5,8,4,0,6,7,9]	6
 
-# numbers = [1, 2, 3, 4, 6, 7, 8, 0]
+numbers = [1, 2, 3, 4, 6, 7, 8, 0]
 # numbers2 = [5, 8, 4, 0, 6, 7, 9]
 
 
-# def solution(numbers):
-#     return 45-sum(numbers)
+def solution(numbers):
+    return 45-sum(numbers)
 
-# def solution(x): return sum(range(10))-sum(x)
 
+def solution(x): return sum(range(15))-sum(x)
+
+
+print(solution(numbers))
 
 # ==================================================================================
 
@@ -54,7 +57,6 @@
 # N	    stages                  	result
 # 5	    [2, 1, 2, 6, 2, 4, 3, 3]	[3,4,2,1,5]
 # 4	    [4,4,4,4,4]	                [4,1,2,3]
-
 N = 5
 stages = [2, 1, 2, 6, 2, 4, 3, 3]
 # N = 4
