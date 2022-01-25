@@ -18,16 +18,20 @@
 # "4321321"     3   "4332"
 # "4177252841"	4	"775841"
 
-from itertools import combinations
-from operator import le
 
-number = "1231234"
+from itertools import combinations
+
+number = "4177252841"
 k = 3
 
 
-# def solution(number, k):
-#     number = list(map(''.join, combinations(number, len(number)-k)))
-#     return max(number)
+def solution(number, k):
+    number = list(map(''.join, combinations(number, len(number)-k)))
+    print(number)
+    return max(number)
+
+
+# == == == == == == == == == == == == == == = 첫 시도 == == == == == == == == == == == == == == ==
 
 
 # def solution(number, k):
@@ -44,15 +48,18 @@ k = 3
 #     return ''.join(result[:len(number)-k])
 
 
-def solution(number, k):
-    stack = []
-    for i in number:
-        while stack and stack[-1] < i and k > 0:
-            k -= 1
-            stack.pop()
-
-        stack.append(i)
-    return ''.join(stack[:len(number)-k])
+# == == == == == == == == == == == == == == = 두번째 시도 == == == == == == == == == == == == == == ==
 
 
-# print(solution(number, k))
+# def solution(number, k):
+#     stack = []
+#     for i in number:
+#         while stack and stack[-1] < i and k > 0:
+#             k -= 1
+#             stack.pop()
+
+#         stack.append(i)
+#     return ''.join(stack[:len(number)-k])
+
+
+print(solution(number, k))

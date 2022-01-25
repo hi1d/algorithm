@@ -51,7 +51,9 @@ def solution(name):
     elif len(A) == 0:
         return answer + len(name)-1
     right = list(filter(lambda x: x > len(name)/2, notA))
+    print(right)
     left = list(filter(lambda x: x < len(name)/2, notA))
+    print(left)
     name_len = len(name)
     if len(left) == 0:
         left_index = (name_len - right[0]) * 2
@@ -64,27 +66,29 @@ def solution(name):
     return right_left + answer
 
 
-# print(solution("JEROEN"))   # 56
-# print(solution("ABAAAAAAAAABB"))  # 7
-# print(solution("JAN"))      # 23
-# print(solution("BBBAAAB"))  # 8
-# print(solution("ABABAAAAABA"))  # 10
-# print(solution("CANAAAAANAN"))  # 48
-# print(solution("ABAAAAABAB"))  # 8
-# print(solution("ABABAAAAAB"))  # 8
-# print(solution("BABAAAAB"))  # 7
-# print(solution("ABAAB"))    # 5
-# print(solution("AAA"))  # 0
-# print(solution("ABAAAAAAABA"))  # 6
-# print(solution("AAB"))  # 2
-# print(solution("AABAAAAAAABBB"))  # 11
-# print(solution("ZZZ"))  # 5
-# print(solution("BBBBAAAAAB"))  # 10
-# print(solution("BBBBAAAABA"))  # 12
-# print(solution("BBBBAABBB"))  # 15
-# print(solution("BAABA"))    # 4
-# print(solution("BBABAAAB"))    # 9
-print(solution("ABABA"))    # 5
+print(solution("JEROEN"))   # 56
+print(solution("ABAAAAAAAAABB"))  # 7
+print(solution("JAN"))      # 23
+print(solution("BBBAAAB"))  # 8
+print(solution("ABABAAAAABA"))  # 10
+print(solution("CANAAAAANAN"))  # 48
+print(solution("ABAAAAABAB"))  # 8
+print(solution("ABABAAAAAB"))  # 8
+print(solution("BABAAAAB"))  # 7
+print(solution("ABAAB"))    # 5
+print(solution("AAA"))  # 0
+print(solution("ABAAAAAAABA"))  # 6
+print(solution("AAB"))  # 2
+print(solution("AABAAAAAAABBB"))  # 11
+print(solution("ZZZ"))  # 5
+print(solution("BBBBAAAAAB"))  # 10
+print(solution("BBBBAAAABA"))  # 12
+print(solution("BBBBAABBB"))  # 15
+print(solution("BAABA"))    # 4
+print(solution("BBABAAAB"))    # 9
+
+
+# print(solution("ABABA"))    # 5
 # print(solution("BABAB"))    # 6
 
 
@@ -125,23 +129,23 @@ limit = 100
 # limit = 100
 
 
-def solution(people, limit):
-    people.sort(reverse=True)
-    test = list(filter(lambda x: sum(x) <=
-                limit, combinations(people, 2)))
-    count = 0
-    test_list = []
-    for i in test:
-        if i[0] not in test_list and i[1] not in test_list:
-            count += 1
-            test_list.append(i[0])
-            test_list.append(i[1])
-    if len(test_list) == 0:
-        count += len(people)
-    else:
-        count += len(test_list)
+# def solution(people, limit):
+#     people.sort(reverse=True)
+#     test = list(filter(lambda x: sum(x) <=
+#                 limit, combinations(people, 2)))
+#     count = 0
+#     test_list = []
+#     for i in test:
+#         if i[0] not in test_list and i[1] not in test_list:
+#             count += 1
+#             test_list.append(i[0])
+#             test_list.append(i[1])
+#     if len(test_list) == 0:
+#         count += len(people)
+#     else:
+#         count += len(test_list)
 
-    return count
+#     return count
 
 
 # print(solution(people, limit))
