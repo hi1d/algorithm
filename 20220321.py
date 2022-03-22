@@ -138,7 +138,7 @@
 
 N = int(input())
 result_count = 0
-for i in range(N):
+for _ in range(N):
     word = input()
     flag = True
     for i in word:
