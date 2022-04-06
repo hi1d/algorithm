@@ -41,28 +41,31 @@
 # 9
 # 7
 
-# import sys
+import sys
 
-# def conquest(x,y, N, color_list=[0,0]):
-#     color = confetti[x][y]
-#     for column in range(x, x+N):
-#         for row in range(y, y+N):
-#             if color != confetti[column][row]:
-#                 conquest(x,y, N//2)
-#                 conquest(x, y+N//2, N//2)
-#                 conquest(x+N//2, y, N//2)
-#                 conquest(x+N//2, y+N//2, N//2)
-#                 return color_list
-#     color_list[color] += 1
-#     return color_list
+def conquest(x,y, N, color_list=[0,0]):
+    color = confetti[x][y]
+    for row in range(x, x+N):
+        for column in range(y, y+N):
+            if color != confetti[row][column]:
+                conquest(x,y, N//2)
+                
+                conquest(x, y+N//2, N//2)
 
-# input = sys.stdin.readline
-# N = int(input())
-# confetti = [list(map(int, input().split())) for _ in range(N)]
+                conquest(x+N//2, y, N//2)
+                
+                conquest(x+N//2, y+N//2, N//2)
+                return color_list
+    color_list[color] += 1
+    return color_list
 
-# color = conquest(0, 0, N)
-# print(color[0])
-# print(color[1])
+input = sys.stdin.readline
+N = int(input())
+confetti = [list(map(int, input().split())) for _ in range(N)]
+
+color = conquest(0, 0, N)
+print(color[0])
+print(color[1])
 
 # 문제
 # 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.
@@ -98,25 +101,25 @@
 # 예제 출력 3 
 # 1 2 3 4
 
-import sys
+# import sys
 
-input = sys.stdin.readline
-N,M = map(int, input().split())
+# input = sys.stdin.readline
+# N,M = map(int, input().split())
 
-def back_tracking(start ,num_list=[]):
-    if len(num_list) == M:
-        print(' '.join(map(str,num_list)))
-        return 
+# def back_tracking(start ,num_list=[]):
+#     if len(num_list) == M:
+#         print(' '.join(map(str,num_list)))
+#         return 
 
-    for i in range(start, N+1):
-        if i not in num_list:
-            num_list.append(i)
-            print(num_list)
-            back_tracking(i+1)
-            num_list.pop()
-            print(num_list)
-            print(start ,i )
+#     for i in range(start, N+1):
+#         if i not in num_list:
+#             num_list.append(i)
+#             print(num_list)
+#             back_tracking(i+1)
+#             num_list.pop()
+#             print(num_list)
+#             print(start ,i )
 
-back_tracking(1)
+# back_tracking(1)
 
 
