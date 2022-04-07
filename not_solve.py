@@ -196,3 +196,4 @@ def solution(C,F,X):
     # return round(min(alone, together_min),6)
 
 print(solution(C,F,X))
+
